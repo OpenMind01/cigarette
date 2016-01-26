@@ -1,0 +1,45 @@
+<aside class="col-2half floatLeft">
+    <div class="spacer_r">
+        <h2 class="sec_title">Inquiries & Messages</h2>
+        <div class="tab_container ">
+            <ul class="fix_ul list_aside">
+                <li><a href="#" title="">All Inquiries</a></li>
+                <li><a href="#" title="">Unread Inquiries</a></li>
+                <li><a href="#" title="">Booked Inquiries</a></li>
+                <li><a href="#" title="">Cancelled Inquiries</a></li>
+            </ul>
+        </div>
+
+        <div class="tab_container mtb_20 ">
+            <ul class="fix_ul list_aside">
+                <li><a href="#" title="">Awaiting Response</a></li>
+                <li><a href="#" title="">Awaiting Payment</a></li>
+            </ul>
+        </div>		
+        <button type="button" ng-click="addInquery()" class="prm_btn btn_big bg_blue mtb_20 create_inquiry_popup">CREATE INQUIRY</button>
+    </div>
+</aside>
+
+<div class="col-9half floatLeft" >
+    <nav class="floatLeft col-7half tabs_scroll">
+        <div ng-init="filterObj.tab='all'"></div>
+        <ul class="tabs tab_width" >
+            <li class="tab_item" ng-class="{active:filterObj.tab=='all', min_tab:filterObj.tab!='all'}" ng-click="filterObj.tab='all'">All</li>
+            <li class="tab_item" ng-class="{active:filterObj.tab==rental.pkey, min_tab:filterObj.tab!=rental.pkey}" ng-click="filterObj.tab=rental.pkey" ng-repeat="rental in rentals">{{rental.name}}</li>            
+        </ul>
+        <div class="clearFloat"></div>
+    </nav>		
+    <div class="prm_search col-4 floatRight">			
+        <button class="search_btn bg_grey" ng-click="gridSearch()">Search</button>
+        <input type="text" name="search_guest" ng-model="filterObj.serachStr" class="search_inpt" id="search_guest" placeholder="Search Guests" />
+        <a class="serch_clear" ng-click="gridClearSearch()" ng-show="filterObj.serachStr">
+            <i class="fa fa-times"></i>
+        </a>
+    </div>
+    <div class="clearFloat"></div>
+    <div class="tabcontents tab_container">
+        <div tokeet-grid="gridOptions" external-scope="$scope">
+        </div>
+    </div>
+</div>
+<div class="clearFloat"></div>

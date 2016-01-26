@@ -1,0 +1,22 @@
+<div class="popWindow" >
+    <div class="popUp_header bg_green relative">
+        <h3 class="pop_title">User Login</h3><a href="#" ng-click="closeModal()"><i class="fa fa-times close_pop"></i></a>
+    </div>
+    <form class="padding30 form_login" validate-form name="login_form">
+        <div class="f_item">
+            <input type="email" name="username"  ng-model="username" placeholder="Email Address" class="fill_form floatLeft" required />
+            <span ng-show="login_form.username.$invalid && login_form.username.$dirty" class="help-block has-error">
+                Please input valid email address
+            </span>
+        </div>
+        <div class="f_item">
+            <input type="password" name="passwd" ng-model="password" placeholder="Password" class="fill_form floatLeft" required />
+            <span ng-show="login_form.passwd.$invalid && login_form.passwd.$dirty" class="help-block has-error">Please input your password</span>
+        </div>
+        <button type="" name="" class="prm_btn bg_green  btn_small" ng-click="doLogin()" ng-class="{'disabled':login_form.$invalid||loginProcess}">
+            <span ng-show="loginProcess"><i class="fa fa-spinner fa-spin"></i></span>
+            LOGIN
+        </button>
+        <button type="" name="" class="prm_btn bg_grey  btn_small" ng-click="closeModal()">CANCEL</button>
+    </form>
+</div>

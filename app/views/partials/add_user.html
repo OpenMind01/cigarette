@@ -1,0 +1,56 @@
+<div class="popWindow">
+    <div class="popUp_header bg_blue relative">
+        <h3 class="pop_title">Add User</h3>
+    </div>
+    <div class="padding30">
+        <form name="">
+
+            <div class="f_item">
+                <input type="text" name="u_fname" id="u_fname" ng-model="u_fname" placeholder="First Name" class="fill_form floatLeft" value="">
+                <div class="clearFloat"></div>
+            </div>
+            
+            <div class="f_item">
+                <input type="text" name="u_lname" id="u_lname" ng-model="u_lname" placeholder="Last Name" class="fill_form floatLeft" value="">
+                <div class="clearFloat"></div>
+            </div>
+            
+            <div class="f_item">
+                <input type="text" name="u_email" id="u_email" ng-model="u_email" placeholder="Email" class="fill_form floatLeft" value="">
+                <div class="clearFloat"></div>
+            </div>
+
+            <div class="f_item">
+                <input type="text" name="u_phone" id="u_phone" ng-model="u_phone" placeholder="Phone Number" class="fill_form floatLeft" value="">
+                <div class="clearFloat"></div>
+            </div>
+
+            <div class="f_item ">
+                <button data-animation="am-flip-x" type="button" placeholder="Select User Group" class="prm_btn bg_white menu_btn f_grey settings_u" ng-model="u_role" data-html="1" bs-options="option.value as option.label for option in options" bs-select><span class="caret"></span>
+                </button>
+                <div class="clearFloat"></div><div class="clearFloat"></div>
+            </div>	
+            
+            <div class="f_item">
+                <input type="text" placeholder="Password" name="u_pass1" id="u_pass1" ng-model="u_pass1" class="fill_form floatLeft" value="">
+                <div class="clearFloat"></div>
+            </div>
+
+            <div class="f_item">
+                <input type="text" placeholder="Repeat Password" name="u_pass2" id="u_pass2" ng-model="u_pass2" class="fill_form floatLeft" value="">
+                <div class="clearFloat"></div>
+            </div>
+
+            <div class="f_item">
+                <p class="floatRight f_blue">Reset Password</p>
+                <div class="clearFloat"></div>
+            </div>	 
+
+            <div class="btn_area">
+                <button type="" name="Cancel" class="prm_btn bg_grey floatRight btn_small" id="Cancel" ng-click="closeModal()">cancel</button>
+                <button type="" name="Add User" class="prm_btn bg_blue floatRight btn_small" id="Add User" ng-click="createUser()">add</button>
+                <div class="clearFloat"></div>
+            </div>
+        </form>
+    </div>
+</div>

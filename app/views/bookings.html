@@ -1,0 +1,277 @@
+<div class="col-8half floatLeft">
+    <!--Table Navigation-->
+    <h2 class="sec_title floatLeft col-4">Bookings</h2>			
+    <nav class="floatLeft col-7 tabs_scroll">
+        <ul class="tabs tab_width" > 
+            <li class="tab_item" id="selected_tab">All</li>
+            <li class="tab_item">Villa Fire</li>
+            <li class="tab_item">Villa Water</li>
+            <li class="tab_item">Villa Fire</li>
+            <li class="tab_item">Villa Fire</li>
+
+            <div class="clearFloat"></div>
+        </ul>
+    </nav>				
+    <!--<div class="floatRight col-1half "><button class="scroll_tabs bg_grey"><i class="fa fa-angle-right"></i></button></div>-->
+    <div class="clearFloat"></div>
+    <!--End Table Navigation-->
+
+    <!--Table Content-->
+    <div class="tabcontents tab_container hide_overflow">
+        <table class="tokeet_table table_header bg_blue">
+            <tr >
+                <th class="table_sp"></th>
+                <th class="tab_w75">Month<i class="fa fa-caret-down ico_sp_l"></i></th>
+                <th class="align_l tab_w120">Guest Name</th>
+                <th class="tab_w60 align_c">Guests</th> 
+                <th class="tab_w90">Start Date</th>
+                <th class="align_c tab_w60">Nights</th>
+                <th class="align_c tab_w70">Rate/Night</th>
+                <th class="align_c tab_w70">Rate/PP/PN</th>
+                <th class="align_r tab_w70">Total</th>
+                <th class="table_sp"></th>
+            <tr>
+        </table>
+
+        <div class="table_scroll_wrapper">
+            <div class="bookings_table table_scroll " id="scroll_bookings">
+
+                <table class="tokeet_table ">
+                    <tr ng-repeat="booking in bookings">
+                        <td class="table_sp"></td>
+                        <td class="tab_w70">{{booking.guest_arrive | date:'MMMM'}}</td>
+                        <td class="align_l tab_w120"><a href="booking_details.php" title="" class="f_blue">John Doe</a></td>
+                        <td class="tab_w60 align_c">{{booking.size}}</td>
+                        <td class="tab_w90">{{booking.guest_arrive | date:'MMMM dd'}}</td>
+                        <td class="tab_w60 align_c">{{(booking.guest_depart| dateDiff:booking.guest_arrive)-1}}</td>
+                        <td class="tab_w70 align_c">$33</td>
+                        <td class="tab_w70 align_c">$27</td>
+                        <td class="align_r tab_w70">$120</td>
+                        <td class="table_sp"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--End Table Content-->
+</div>
+
+<aside class="col-3half floatLeft">
+    <div class="spacer_l dropdown">
+        <h2 class="sec_title floatLeft">Income Detail</h2>
+        <select class="prm_select floatRight min_select">
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+        </select>
+        <div class="clearFloat"></div>
+
+        <div class="tab_container space_b_select">
+            <table class="tokeet_table table_header bg_blue">
+                <tr class="">
+                    <th class="table_sp"></th>
+                    <th class="tab_w70 align_l">Month</th>
+                    <th class="align_c">Nights</th>
+                    <th class="align_c">Revenue</th>
+                    <th class="tab_w70 align_c">Expenses</th>
+                    <th class="table_sp"></th>
+                <tr>
+            </table>
+
+            <table class="tokeet_table ">
+
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td class="tab_w70">Jan</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="tab_w70 align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td>Feb</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>	
+                    <td class="table_sp"></td>
+                    <td>Mar</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td>Apr</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td>May</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td>Jun</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td>Jul</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td>Aug</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td>Sep</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp"></td>
+                    <td>Oct</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>	
+                    <td class="table_sp"></td>
+                    <td>Nov</td>
+                    <td class="align_c">10</td>
+                    <td class="align_c">$200</td>
+                    <td class="align_c">$100</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+                <tr>
+                    <td class="table_sp border_bottom"></td>
+                    <td class="no_border_bottom">Dec</td>
+                    <td class="align_c no_border_bottom">10</td>
+                    <td class="align_c no_border_bottom">$200</td>
+                    <td class="align_c no_border_bottom">$100</td>
+                    <td class="table_sp border_bottom"></td>
+                </tr>
+
+                <tr > 
+                    <td class="table_sp transp_cell "></td>
+                    <td colspan="3" class="transp_cell no_border_bottom f_pink">TOTAL</td>
+                    <td class="bg_pink total_val no_border_bottom" colspan="2">$ 15.200</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</aside>
+
+<div class="clearFloat"></div>
+<!--
+<div class="container">
+    <div class="p_tb">
+        <h2 class="sec_title ">Channel Performance</h2>
+
+        <table class="tokeet_table align_c non_tabbed tab_container">
+            <tr class="bg_blue">
+                <th class="table_sp"></th>
+                <th></th>
+                <th>Flipkey</th>
+                <th>VRBO</th>
+                <th>Air BnB</th>
+                <th>Booking.com</th>
+                <th>Excpedia.com</th>
+                <th>Homeaway</th>
+                <th>Luxury Retreats</th>
+                <th>Tripadvisor</th>
+                <th>Clickstay</th>
+                <th>Wimco</th>
+                <th class="table_sp"></th>
+            </tr>
+
+            <tr>
+                <td class="table_sp transp_cell"></td>
+                <td class="llgrey transp_cell">Inquiries</td>
+                <td>2</td>
+                <td>5</td>
+                <td>1</td>
+                <td></td>
+                <td>1</td>
+                <td>5</td>
+                <td>8</td>
+                <td>2</td>
+                <td></td>
+                <td>5</td>
+                <td class="table_sp"></td>
+            </tr>
+            <tr>
+                <td class="table_sp transp_cell"></td>
+                <td class="llgrey transp_cell">Bookings</td>
+                <td>5</td>
+                <td>8</td>
+                <td>2</td>
+                <td></td>
+                <td>2</td>
+                <td>5</td>
+                <td>1</td>
+                <td></td>
+                <td>1</td>
+                <td>5</td>
+                <td class="table_sp"></td>
+            </tr>
+            <tr>
+                <td class="table_sp transp_cell"></td>
+                <td class="llgrey transp_cell no_border_bottom">Revenue</td>
+                <td>2</td>				
+                <td>5</td>
+                <td>8</td>
+                <td>2</td>
+                <td></td>
+                <td>5</td>
+                <td>1</td>
+                <td></td>
+                <td>1</td>
+                <td>5</td>
+                <td class="table_sp"></td>
+            </tr>
+
+        </table> 
+
+
+    </div>
+</div>
+-->

@@ -1,0 +1,309 @@
+/*
+BOOTSTRAP XP V 2.0 January 23rd 2015
+Multimedia Solutions and Consulting
+By: Daria Silvander and Eduardo Ponce de Leon
+http://www.multimediaxp.com | info@multimediaxp.com
+*/
+
+/* Defaults */
+*{
+	border:none;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	font-style:normal;
+	font-weight:400;
+	font-size:14px;
+}
+
+html,body{
+	height:100%; 
+}
+
+
+.gotoAnchor{
+	display:block !important;
+	width:0 !important;
+	height:0 !important;
+}
+
+.relative{
+	position:relative;
+}
+
+.mediaEmbed iframe{
+	width:100%;
+}
+
+.absolute{
+	position:absolute;
+}
+
+/*Desktop View First */
+.mobile{
+	display:none;
+}
+
+.tablet{
+	display:none;
+}
+
+.desktop{
+	display:block;
+}
+
+.container{
+	width: 1180px;
+	margin:auto;
+}
+
+.pageHeight {
+    min-height: calc(100% - 165px);
+    min-height: -webkit-calc(100% - 165px);
+}
+
+.trans_h{
+	-webkit-transition: height 0.6s ease;
+	-moz-transition: height 0.6s ease;
+	-ms-transition: height 0.6s ease;
+	-o-transition: height 0.6s ease;
+	transition: height 0.6s ease;
+}
+
+
+.trans_w{
+	-webkit-transition: width 0.6s ease;
+	-moz-transition: width 0.6s ease;
+	-ms-transition: width 0.6s ease;
+	-o-transition: width 0.6s ease;
+	transition: width 0.6s ease;
+}
+
+
+.trans_op{
+	-webkit-transition: opacity 0.6s ease;
+	-moz-transition: opacity 0.6s ease;
+	-ms-transition: opacity 0.6s ease;
+	-o-transition: opacity 0.6s ease;
+	transition: opacity 0.6s ease;
+}
+
+.trans_bg{
+	-webkit-transition: background 0.6s ease;
+	-moz-transition: background 0.6s ease;
+	-ms-transition: background 0.6s ease;
+	-o-transition: background 0.6s ease;
+	transition: background 0.6s ease;
+}
+
+.trans_color{
+	-webkit-transition: color 0.6s ease;
+	-moz-transition: color 0.6s ease;
+	-ms-transition: color 0.6s ease;
+	-o-transition: color 0.6s ease;
+	transition: color 0.6s ease;
+}
+
+
+.img-responsive {  
+  display: block;
+  width: 100%;  
+} 
+
+.img-responsive-fit {  
+  max-width: 100%;  
+  max-height: 100%;  
+}
+
+/* Floats */
+.floatLeft{
+	float:left !important;
+}
+
+.floatRight{
+	float:right !important;
+}
+
+.clearFloat{
+	clear:both;
+}
+
+/* Paddings */
+.padding5{
+	padding:5px;
+}
+.padding10{
+	padding:10px;
+}
+.padding13{
+	padding:13px;
+}
+.padding15{
+	padding:15px;
+}
+.padding20{
+	padding:20px;
+}
+.padding30{
+	padding:30px;
+}
+
+.padding15intab{
+	padding:15px 15px 15px 0;
+}
+
+
+.paddingAside10{
+	padding:0 10px;
+}
+
+.paddingAside15{
+	padding:0 15px;
+}
+
+.paddingAside20{
+	padding:0 20px;
+}
+
+.paddingAside30{
+	padding:0 30px;
+}
+
+
+/* From Bootstrap */
+.dropdown-menu {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: outside none none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+	box-sizing: border-box;
+}
+
+.dropdown-menu {
+    font-size: 14px;
+    list-style: outside none none;
+    text-align: left;
+	box-sizing: border-box;
+}
+
+.dropdown-menu > li > a {
+    clear: both;
+    color: #666;
+    display: block;
+    font-weight: 400;
+    line-height: 1.42857;
+    padding: 4px 20px;
+    white-space: nowrap;
+	font-size:12px;
+}
+
+
+.dropdown-menu .divider {
+    background-color: #e5e5e5;
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+}
+
+.dropdown-menu .fa {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+    top: 1px;
+	box-sizing: border-box;
+	font-size:18px;
+	color: #00BCD3;
+}
+
+
+/*columns*/
+.col-12 {
+  width: 100%;
+}
+
+.col-11 {
+  width: 91.66666666666666%;
+}
+
+.col-10{
+	width: 83.33333333333334%;
+}
+.col-9{
+	width: 75%;
+}
+
+.col-9half{
+	width: 79.1666666666667%;
+}
+
+.col-8{
+	width: 66.66666666666666%;
+}
+
+.col-8half{
+	width: 70.33333333333333%;
+}
+
+.col-7half{
+	width: 62.49999999996%;
+}
+
+.col-7{
+	width: 58.333333333333336%;
+}
+
+.col-6{
+	width: 50%;
+}
+
+.col-5{
+	width: 41.66666666666667%;
+}
+
+.col-4{
+	width: 33.33333333333333%;
+}
+
+.col-3{
+	width: 25%;
+}
+
+
+.col-3half{
+	width: 29.666666666667%;
+}
+
+.col-2{
+	width: 16.666666666666664%;
+}
+
+.col-2half{
+	width: 20.83333333333333%;
+}
+
+.col-2foot{
+	width: 20%;
+}
+
+.col-1{
+	width: 8.333333333333332%;
+}
+
+.col-1half{
+	width: 4.1666666666667%;
+}

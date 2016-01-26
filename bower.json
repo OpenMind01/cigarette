@@ -1,0 +1,37 @@
+{
+  "name": "tokeet",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.3.0",
+    "angular-animate": "^1.3.0",
+    "angular-cookies": "^1.3.0",
+    "angular-resource": "~1.4.0",
+    "angular-route": "^1.3.0",
+    "angular-sanitize": "^1.3.0",
+    "angular-touch": "^1.3.0",
+    "ui-router": "~0.2.15",
+    "underscore": "~1.8.3",
+    "angular-strap": "~2.2.4",
+    "fontawesome": "~4.3.0",
+    "restangular": "~1.5.1",
+    "jquery-mousewheel": "~3.1.12",
+    "perfect-scrollbar": "~0.6.2",
+    "Chart.js": "~1.0.2",
+    "angular-notify": "~2.5.0",
+    "angular-loading-bar": "~0.7.1",
+    "jquery-ui": "1.11.4",
+    "moment": "~2.10.3",
+    "fullcalendar": "2.3.2",
+    "angular-ui-calendar": "1.0.0",
+    "angular-paging": "~1.0.3",
+    "angular-ui-select": "~0.12.0",
+    "ng-color-picker": "",
+    "pikaday-angular": "~2.0.0",
+    "ng-mfb": "~0.6.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.3.0"
+  },
+  "appPath": "app",
+  "moduleName": "tokeetApp"
+}

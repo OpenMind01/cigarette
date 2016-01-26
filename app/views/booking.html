@@ -1,0 +1,181 @@
+<aside class="col-2half floatLeft">
+    <div class="spacer_r">
+        <h2 class="sec_title min_letter_sp">Adjacent Reservations</h2>
+        <div class="tab_container ">
+            <ul class="fix_ul list_aside">
+                <li><a href="#" title="">Jul-25-2015</a></li>
+                <li><a href="#" title="">Jul-25-2015</a></li>
+                <li><a href="#" title="">Jul-25-2015</a></li>
+            </ul>
+        </div>
+
+        <h2 class="sec_title" style="margin-top:20px;">Flight Information</h2>
+        
+        
+        <div ng-if="!itinerary.flights.length">
+            <div class="tab_container info_fields relative">
+                <div class="edit_srcl bg_grey" ng-click="addFlight()"><i class="fa fa-pencil"></i></div>
+                <p><span>Flight: </span></p>
+                <p><span>Airline: </span></p>
+                <p><span>Date: </span></p>
+                <p><span>Time: </span></p>
+            </div>
+        </div>
+        <div ng-if="itinerary.flights.length">
+            <div class="tab_container info_fields relative" ng-repeat="flight in itinerary.flights">
+                <div class="edit_srcl bg_grey" ng-click="editFlight(flight)"><i class="fa fa-pencil"></i></div>
+                <p><span>Flight: </span>{{flight.flight_num}}</p>
+                <p><span>Airline: </span>{{flight.airline|airlinecodetostring|abbreviate:true:12}}</p>
+                <p><span>Date: </span>{{flight.departure|date:'dd-MMM-yyyy'}}</p>
+                <p><span>Time: </span>{{flight.departure|date:'hh:mm'}}</p>
+            </div>
+            <button title="" class="prm_btn btn_big bg_light_grey mtb_20" ng-click="addFlight()">Add Flight</button>
+        </div>
+        
+        
+        
+
+        <div class="tab_container info_fields relative">
+            <!--<div class="edit_srcl bg_grey"><i class="fa fa-pencil"></i></div>-->			
+            <p><span>Check in: </span>16:00</p>
+            <p><span>Check Out: </span>11:00</p>			
+        </div>	
+        <button title="" class="prm_btn btn_big bg_light_grey mtb_20"><i class="fa fa-angle-double-left"></i>&nbsp;Back to bookings</button>
+    </div>
+</aside>
+<div class="col-9half floatLeft">
+    <h2 class="sec_title">Reservation</h2>
+    <div class="clearFloat"></div>
+    <div class="tab_container">
+        <table class="tokeet_table align_l">
+            <tr class="table_header bg_light_grey align_l">
+                <th class="table_sp"></th>
+                <th class="tab_w160">Guest Details</th>
+                <th class="">Booking Detail</th>			
+                <th class="tab_w120 ">Charges</th>
+                <th class="tab_w120 ">Amounts</th>
+                <th class="table_sp"></th>
+            </tr>				
+            <tr>
+                <td class="table_sp"></td>
+                <td class="tab_w160 clickable">{{booking.guest.name}}</td>
+                <td class="clickable" ng-click="goTo('/rentals')">{{booking.rental.name}}</td>				
+                <td class="tab_w120 transp_cell clickable">Rental Charge:</td>
+                <td class="tab_w120 transp_cell clickable">$ 3.000</td>
+                <td class="table_sp transp_cell"></td> 
+            </tr>
+            <tr>
+                <td class="table_sp"></td>
+                <td class="tab_w160 clickable">{{booking.guest.phone ? booking.guest.phone : 'No Phone Number'}}</td>
+                <td class="">{{booking.size}} Guests</td>				
+                <td class="tab_w120 transp_cell clickable">Discounts:</td>
+                <td class="tab_w120 transp_cell clickable">0</td>
+                <td class="table_sp transp_cell"></td>
+            </tr>				
+            <tr>
+                <td class="table_sp"></td>
+                <td class="tab_w160 clickable">{{booking.guest.primaryemail| abbreviate:false:15:'...'}}</td>
+                <td class="">{{booking.guest_arrive| date:'MMMM dd, yyyy'}} &nbsp;&nbsp;-&nbsp;&nbsp; {{booking.guest_depart| date:'MMMM dd, yyyy'}}</td>				
+                <td class="tab_w120 transp_cell clickable">Taxes & Fees:</td>
+                <td class="tab_w120 transp_cell no_border_bottom clickable">$ 800</td>
+                <td class="table_sp transp_cell"></td>					
+            </tr>			
+            <tr>
+                <td class="table_sp"></td>
+                <td class="tab_w160 no_border_bottom clickable">Source: {{booking.source}}</td>
+                <td class="no_border_bottom">{{booking.guest_depart| dateDiff:booking.guest_arrive}} days, {{(booking.guest_depart| dateDiff:booking.guest_arrive)-1}} Nights</td>
+                <td class="tab_w120 f_pink transp_cell no_border_bottom">TOTAL:</td>
+                <td colspan="2" class="tab_w120 bg_pink total_val no_border_bottom">$ 3.800</td>				
+            </tr>				
+        </table>
+    </div>
+
+    <div class="mtb_40">
+        <div class="table_title_group">
+            <h2 class="sec_title ">Messages</h2>	
+
+        </div>
+        <div class=" tab_container">
+            <table class="tokeet_table align_l">
+                <tr class="table_header bg_blue align_l">
+                    <th class="table_sp"></th>
+                    <th class="tab_w120">Received&nbsp;<i class="fa fa-caret-down"></i></th>
+                    <th class="tab_w120">Status</th>
+                    <th class="">Message</th>
+                    <th class="table_sp"></th>
+                </tr>
+
+                <tr ng-repeat="message in messages track by message.pkey">
+                    <td class="table_sp"></td>
+                    <td class="tab_w120">{{message.received_on| date:'MMMM dd, hh:mm a'}}</td>
+                    <td class="tab_w120">{{message.read ? 'Read' : 'Unread'}}</td>
+                    <td class="">{{message.message_txt}}</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="mtb_40">
+        <div class="table_title_group">
+            <h2 class="sec_title ">Billing & Payments</h2>
+
+        </div>
+        <div class="tab_container">
+            <table class="tokeet_table">
+                <tr class="table_header bg_blue align_l">
+                    <th class="table_sp"></th>
+                    <th class="tab_w120">Invoice ID&nbsp;<i class="fa fa-caret-down"></i></th>
+                    <th class="tab_w90">Sent</th>
+                    <th class="">Status</th>
+                    <th class="">Paid</th>
+                    <th class="">Recipient</th>
+                    <th class="tab_w60">Amount</th>
+
+                <div class="clearFloat"></div>
+                <th class="table_sp"></th>
+                </tr>
+                <?php for($i=0; $i<3; $i++){?>
+                <tr>
+                    <td class="table_sp"></td>
+                    <td class="">0012112</td>
+                    <td class="">30-Jul-2015</td>
+                    <td class="">Pending</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    <td class="tab_w60">$ 999.99</td>
+                    <td class="table_sp"></td>
+                </tr>
+                <?php } ?>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="mtb_20">
+        <h2 class="sec_title">Special Requests</h2>
+        <textarea rows="4" cols="50" class="fill_form" placeholder="Special Requests..." name="sp_requests" id="sp_requests"></textarea>
+
+    </div>
+
+    <div class="col-6 col-mob-12 floatLeft">
+        <div class="spacer_r">
+            <h2 class="sec_title ">Billing Notes</h2>
+            <textarea rows="4" cols="50" class="fill_form" placeholder="Billing Notes..." name="bl_notes" id="bl_notes"></textarea>
+        </div>
+    </div>
+    <div class="col-6 col-mob-12 floatLeft">	
+        <h2 class="sec_title">Housekeeping Notes</h2>
+        <textarea rows="4" cols="50" class="fill_form" placeholder="Housekeeping Notes..." name="hk_notes" id="hk_notes"></textarea>
+    </div>
+
+    <div class="clearFloat"></div>
+
+    <div class="btn_area">
+        <button type="" name="" class="prm_btn bg_grey floatRight btn_small" id=""><i class="fa fa-angle-double-left"></i>&nbsp;cancel, back to bookings</button>
+        <button type="" name="" class="prm_btn bg_green floatRight btn_small" id="">save</button>
+        <div class="clearFloat"></div>
+    </div>
+</div>
+<div class="clearFloat"></div>	

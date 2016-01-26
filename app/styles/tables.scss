@@ -1,0 +1,162 @@
+.table_scroll_wrapper{
+	height: 541px;
+	margin: 5px 5px 10px 0;
+	position:relative;
+}
+
+.tab_container{
+  background-color: #FFF;
+  -webkit-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.21);
+  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.21);
+}
+
+.tokeet_table{
+  width: 100%;
+  font-size: 13px;
+  border-collapse: collapse;
+  font-weight: normal;
+  border-spacing: 0;
+}
+
+.calendarPopover td.label {
+    width: 50px !important;
+}
+
+.calendarMonth{
+    color: white;
+}
+
+.calendar_table th{
+    padding-left: 0;
+    text-align: center;
+    width: calc(100% / 7);
+    width: -webkit-calc(100% / 7);
+}
+
+.tokeet_table th {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.tokeet_table td.clickable:hover {
+    color: #00bcd3 !important;
+    cursor: pointer;
+}
+
+.tokeet_table th {
+	color: rgba(255, 255, 255, 1);
+	margin: 0;
+	padding: 10px;
+	text-shadow: 0 0 6px rgba(31, 176, 193, 0.9);
+}
+
+.tokeet_table .bg_light_grey th{
+	text-shadow:none !important;
+}
+
+.tokeet_table td{
+  padding: 12px 10px;
+  margin: 0px;
+  color:#7c7c7c;
+  border-bottom:2px solid #E6E6E6;
+  font-size:13px !important;
+}
+
+.tokeet_table td a{
+  font-size:13px !important;
+}
+
+.table_header td{
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.table_sp{
+	width: 15px;
+	border-bottom: none !important;
+	padding: 0 !important;
+}
+
+.total_val{
+  color: #fff !important;
+  font-weight: 400;
+  padding: 10px 10px 14px 19px !important;
+  font-size: 16px;
+}
+
+.table_scroll{
+  overflow: hidden;
+}
+
+.bookings_table{
+  height: 550px;
+}
+
+.table_padding{
+  padding: 0 15px;
+}
+
+
+.tab_w10{
+	width: 10px;
+}
+
+.tab_w60{
+	width: 60px;
+}
+
+.tab_w70{
+	width: 70px;
+}
+
+.tab_w75{
+	width: 75px;
+}
+
+.tab_w90{
+	width: 90px;
+}
+
+.tab_w120{
+	width: 120px;
+}
+
+.tab_w160{
+	width: 160px;
+}
+
+.w10{
+	width: 100%;
+}
+
+.w500{
+	 width: 500px;
+}
+
+.v_align{
+	  vertical-align: top;
+}
+
+.transp_cell{
+	background: rgba(204, 204, 204, 0.19);
+}
+
+.no_border_bottom{
+	border-bottom: none !important;
+}
+
+.tab_bor_r{
+	  border-right: 1px solid rgba(204, 204, 204, 0.21);
+}
+
+.tab_bor_b{
+	  border-bottom: 1px solid rgba(204, 204, 204, 0.21) !important;
+}
+
+.tab_bor_t{
+	  border-top: 1px solid rgba(204, 204, 204, 0.21) !important;
+}

@@ -1,0 +1,131 @@
+<div class="popWindow add_rental">
+	<div class="popUp_header bg_blue relative">
+		<h3 class="pop_title">Add Rental</h3>
+	</div>
+	<div class="padding30">
+	<form name="">
+	
+		<div class="col-6 floatLeft align_l">
+			<div class="f_item">
+				<label for="" class="">Rental Name:</label>
+				<input type="text" name="name" id="name" ng-model="name" placeholder="Rental name" class="fill_form" value="">
+				<div class="clearFloat"></div>
+			</div>
+			
+			<div class="f_item">
+				<label for="" class="">Phone:</label>
+				<input type="text" name="phone" id="phone" ng-model="phone" placeholder="Phone" class="fill_form " value="">
+				
+				<div class="clearFloat"></div>
+			</div>
+			
+			<div class="f_item">
+				<label for="" class="">Email:</label>
+				<input type="text" name="email" id="email" ng-model="email" placeholder="Email" class="fill_form " value="">
+				
+				<div class="clearFloat"></div>
+			</div>
+			
+			<div class="f_item">
+				<label for="" class="">Color:</label>
+				<input type="text" name="color" id="color" ng-model="color" placeholder="Color" class="fill_form " value="">
+				
+				<div class="clearFloat"></div>
+			</div>
+			
+			<h3 class="sec_sub_title in_form_title f_green">Location Info</h3>
+				
+			<div class="f_item dropdown">
+				<label for="state" class="">State:</label>
+				<select class="prm_select  full_select" name="state" ng-model="state" id="state" value="" >
+					<option value="Florida">Florida</option>
+					<option value="California">California</option>
+					<option value="New York">New York</option>
+				</select>
+				<div class="clearFloat"></div>
+			</div>
+
+			<div class="f_item">
+				<label for="city" class="">City:</label>
+				<input type="text" name="city" id="city" ng-model="city" class="fill_form " value="">
+				<div class="clearFloat"></div>
+			</div>
+			
+			<div class="f_item">
+				<label for="address" class="">Address:</label>
+				<input type="text" name="address" id="address" ng-model="address" class="fill_form " value="">
+				<div class="clearFloat"></div>
+			</div>
+			
+			<div class="f_item">
+				<label for="zip" class="">ZIP:</label>
+				<input type="text" name="zip" id="zip" ng-model="zip" class="fill_form " value="">
+				<div class="clearFloat"></div>
+			</div>
+		</div>	
+		
+		
+		<div class="col-6 floatRight ">		
+			<div class="paddingRight30"> 
+				<div class="col-6 floatLeft">	
+			
+					<div class="f_item dropdown">
+						<label for="bedrooms" class="">Bedrooms:</label>
+						<select class="prm_select param_select min_select min_min_select" name="bedrooms" id="bedrooms" ng-model="bedrooms" value="">
+						 <option>1</option>
+						 <option>2</option>
+						 <option>3</option>
+
+					   </select>
+
+						<div class="clearFloat"></div>
+					</div>
+					<div class="f_item dropdown">
+						<label for="bathrooms" class="">Bathrooms:</label>
+						<select class="prm_select param_select min_min_select" name="bathrooms" id="bathrooms" ng-model="bathrooms" value="" >
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<div class="clearFloat"></div>
+					</div>
+				</div>
+				
+				<div class="col-6 floatLeft">	
+			
+					<div class="f_item dropdown">
+						<label for="sleep_max" class="">Sleeps Max:</label>
+						<select class="prm_select param_select min_min_select" name="sleep_max" id="sleep_max" ng-model="sleep_max" value="" >
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<div class="clearFloat"></div>
+					</div>
+					<div class="f_item dropdown">
+						<label for="sleep_min" class="">Sleeps Min:</label>
+						<select class="prm_select param_select min_min_select" name="sleep_min" id="sleep_min" ng-model="sleep_min" value="" >
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<div class="clearFloat"></div>
+					</div>
+				</div>
+				<div class="clearFloat"></div>
+				
+				<h3 class="sec_sub_title  f_green">Description</h3>
+				<textarea rows="10" cols="50" class="fill_form" placeholder="Description..." name="desc" id="desc" ng-model="desc"></textarea>
+			</div>
+							
+		</div>
+		<div class="clearFloat"></div>			
+		<div class="btn_area">
+			<button type="" name="Cancel" class="prm_btn bg_grey floatRight btn_small" id="Cancel" ng-click="closeModal()">cancel</button>
+            <button type="" name="Add Rental" class="prm_btn bg_blue floatRight btn_small" id="Add Rental" ng-click="saveRental()">add</button>
+			<div class="clearFloat"></div>
+		</div>	
+		
+	</form>
+	</div>
+</div>

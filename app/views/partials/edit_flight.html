@@ -1,0 +1,54 @@
+<div class="popWindow">
+    <div class="popUp_header bg_blue relative">
+        <h3 class="pop_title">Edit Flight</h3><a href="#" ng-click="closeModal()"><i class="fa fa-times close_pop"></i></a>
+    </div>
+    <form validate-form name="add_flight_form" class="horizenal_form">
+        <div class="padding15">
+            <div class="f_item">                
+                <input type="text" name="flight_num" ng-model="flight_num" id="" placeholder="Flight Number" class="fill_form" required>
+                <span ng-show="add_flight_form.flight_num.$invalid && add_flight_form.flight_num.$dirty" class="help-block has-error">
+                    Please input flight number
+                </span>
+                <div class="clearFloat"></div>
+            </div>
+            
+            <div class="f_item">                
+                <ui-select ng-model="row.airline"
+                           theme="select2"
+                           search-enabled="true"
+                           ng-disabled="false"
+                           reset-search-input="false"
+                           required
+                           style="width: 300px;">
+                    <ui-select-match placeholder="Airline">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="row in airlineList | filter: $select.search track by $index">
+                        <div ng-bind-html="row.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+                <div class="clearFloat"></div>
+            </div>
+            
+            <div class="f_item">                
+                <input type="text" name="depart_date"  ng-value="depart_date" pikaday="depart_date" id="" placeholder="Depart Date" class="fill_form" required>                
+                <div class="clearFloat"></div>
+            </div>
+            
+            <div class="f_item">
+                <input type="time" name="arrive_date" ng-model="depart_time" id="" placeholder="Dpeart time" class="fill_form" required>                
+                <div class="clearFloat"></div>
+            </div>
+            
+            
+            <button type="" name="" class="prm_btn bg_grey floatRight btn_small inform_sp" id="" ng-click="closeModal()">cancel</button>
+            <button type="" name="" class="prm_btn bg_yellow floatRight btn_small inform_sp" id="" ng-click="deleteFlight()">
+                <span ng-show="deleteprocess"><i class="fa fa-spinner fa-spin"></i></span>
+                delete
+            </button>            
+            <button type="" name="" class="prm_btn bg_blue floatRight btn_small" id="" ng-click="editFlight()" ng-class="{'disabled':add_flight_form.$invalid||process}">
+                <span ng-show="process"><i class="fa fa-spinner fa-spin"></i></span>
+                update
+            </button>
+            <div class="clearFloat"></div>	
+        </div>	 		
+    </form>
+</div>

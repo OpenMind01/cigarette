@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <base href="/" />
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">        
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.) styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="bower_components/perfect-scrollbar/css/perfect-scrollbar.css" />
+        <link rel="stylesheet" href="bower_components/angular-notify/dist/angular-notify.css" />
+        <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+        <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+        <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+        <link rel="stylesheet" href="bower_components/ng-color-picker/color-picker.css" />
+        <link rel="stylesheet" href="bower_components/pikaday/css/pikaday.css" />
+        <link rel="stylesheet" href="bower_components/ng-mfb/mfb/dist/mfb.css" />
+        <!-- endbower -->
+        
+        <!-- Angular Strap -->
+        <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libs.min.css">
+	    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/docs.min.css">
+        
+        <!-- endbuild -->        
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!--Fonts, Icons-->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+        <link type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />                
+        
+        <!-- Start of tokeet Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","tokeet.zendesk.com");/*]]>*/</script>
+<!-- End of tokeet Zendesk Widget script -->
+        
+    </head>
+    <body ng-app="tokeetApp">
+        
+        <div ui-view class="main-contianer"></div>
+        <div id="popWrap">
+            <div id="shadow"></div>
+            <div id="popcont"></div>
+        </div>
+        
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+        <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+        <script src="bower_components/lodash/lodash.js"></script>
+        <script src="bower_components/restangular/dist/restangular.js"></script>
+        <script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+        <script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+        <script src="bower_components/Chart.js/Chart.js"></script>
+        <script src="bower_components/angular-notify/dist/angular-notify.js"></script>
+        <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+        <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+        <script src="bower_components/angular-paging/paging.js"></script>
+        <script src="bower_components/angular-ui-select/dist/select.js"></script>
+        <script src="bower_components/ng-color-picker/color-picker.js"></script>
+        <script src="bower_components/pikaday/pikaday.js"></script>
+        <script src="bower_components/pikaday-angular/pikaday-angular.js"></script>
+        <script src="bower_components/ng-mfb/src/mfb-directive.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>       
+        
+        <!-- Custom Libraries -->
+        <script type="text/javascript" src="scripts/customlibs/functions.js"></script>
+        
+        <!-- routes -->
+        <script src="scripts/routes/router.js"></script>
+        
+        <!-- constant -->
+        <script src="scripts/constants/main.js"></script>
+        <script src="scripts/constants/source.js"></script>
+        <script src="scripts/constants/airline.js"></script>
+        
+        <!-- service -->
+        <script src="scripts/services/main.js"></script>        
+        <script src="scripts/services/authservice.js"></script>        
+        <script src="scripts/services/modalservice.js"></script>        
+        <script src="scripts/services/notifyservice.js"></script>        
+        <script src="scripts/services/guestservice.js"></script>        
+        <script src="scripts/services/inquiryservice.js"></script>        
+        <script src="scripts/services/flightservice.js"></script>        
+        
+        
+        <!-- directive -->
+        <script src="scripts/directives/main.js"></script>
+        <script src="scripts/directives/calendar.js"></script>
+        <script src="scripts/directives/include.js"></script>
+        <script src="scripts/directives/popbox.js"></script>
+        <script src="scripts/directives/validateform.js"></script>
+        <script src="scripts/directives/tokeetgrid.js"></script>
+        
+        
+        <!-- filters-->    
+        <script src="scripts/filters/main.js"></script>
+        <script src="scripts/filters/abbreviate.js"></script>
+        <script src="scripts/filters/capitalize.js"></script>
+        <script src="scripts/filters/regex.js"></script>
+        <script src="scripts/filters/dateDiff.js"></script>
+        <script src="scripts/filters/airlinecodetostring.js"></script>
+        
+        <!-- controllers -->
+        <script src="scripts/controllers/main.js"></script>        
+        <script src="scripts/controllers/partials/header.js"></script>
+        <script src="scripts/controllers/partials/frontheader.js"></script>
+        <script src="scripts/controllers/partials/footer.js"></script>        
+        <script src="scripts/controllers/partials/setting.js"></script>  
+        <script src="scripts/controllers/inquiries.js"></script>
+        <script src="scripts/controllers/inquiry.js"></script>
+        <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/controllers/guest.js"></script>
+        <script src="scripts/controllers/rentals.js"></script>
+        <script src="scripts/controllers/guestlist.js"></script>
+        <script src="scripts/controllers/calendar.js"></script>
+        <script src="scripts/controllers/bookings.js"></script>
+        <script src="scripts/controllers/booking.js"></script>        
+        <script src="scripts/controllers/flight.js"></script>
+        <script src="scripts/controllers/billing.js"></script>
+        <script src="scripts/controllers/help.js"></script>
+        <script src="scripts/controllers/feedback.js"></script>
+        <script src="scripts/controllers/channels.js"></script>
+        <!-- Login -->
+        <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/controllers/login/login.js"></script>
+
+        <!-- endbuild -->
+    </body>
+</html>

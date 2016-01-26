@@ -1,0 +1,48 @@
+<aside class="col-2half floatLeft">
+    <div class="spacer_r">
+        <h2 class="sec_title">Guest & Other Contacts</h2>
+        <div class="tab_container ">
+            <ul class="fix_ul list_aside">
+                <li><a href="#" title="">Canadian</a></li>
+                <li><a href="#" title="">American</a></li>
+                <li><a href="#" title="">European</a></li>
+            </ul>
+        </div>		
+        <div class="tab_container mtb_20 ">
+            <ul class="fix_ul list_aside">
+                <li><a href="#" title="">VIP Guests</a></li>
+                <li><a href="#" title="">Booked</a></li>
+            </ul>
+        </div>			
+        <button type="button" ng-click="addGuest()" class="prm_btn btn_big bg_blue mtb_20">Add Guest</button>
+    </div>
+</aside>
+<div class="col-9half floatLeft" >
+    <nav class="floatLeft col-7">
+        <div ng-init="filterObj.tab='all'"></div>
+        <ul class="tabs tab_width" style="width:720px"> 
+            <li class="tab_item" ng-class="{active:filterObj.tab=='all', min_tab:filterObj.tab!='all'}" ng-click="filterObj.tab='all'">All</li>
+            <li class="tab_item" ng-class="{active:filterObj.tab=='ae', min_tab:filterObj.tab!='ae'}" ng-click="filterObj.tab='ae'">A - E</li>
+            <li class="tab_item" ng-class="{active:filterObj.tab=='fj', min_tab:filterObj.tab!='fj'}" ng-click="filterObj.tab='fj'">F - J</li>
+            <li class="tab_item" ng-class="{active:filterObj.tab=='ko', min_tab:filterObj.tab!='ko'}" ng-click="filterObj.tab='ko'">K - O</li>
+            <li class="tab_item" ng-class="{active:filterObj.tab=='pt', min_tab:filterObj.tab!='pt'}" ng-click="filterObj.tab='pt'">P - T</li>
+            <li class="tab_item" ng-class="{active:filterObj.tab=='uz', min_tab:filterObj.tab!='uz'}" ng-click="filterObj.tab='uz'">U - Z</li>            
+        </ul>
+        <div class="clearFloat"></div>
+    </nav>
+
+    <div class="prm_search col-5 floatRight">			
+        <button class="search_btn bg_grey" ng-click="gridSearch()">Search</button>
+        <input type="text" name="search_guest" ng-model="filterObj.serachStr" class="search_inpt" id="search_guest" placeholder="Search Guest" />
+        <a class="serch_clear" ng-click="gridClearSearch()" ng-show="filterObj.serachStr">
+            <i class="fa fa-times"></i>
+        </a>
+    </div>		
+    <div class="clearFloat"></div>
+
+    <div class="tabcontents tab_container">
+        <div tokeet-grid="gridOptions" external-scope="$scope">
+        </div>
+    </div>
+</div>
+<div class="clearFloat"></div>

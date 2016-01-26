@@ -1,0 +1,22 @@
+<div class="cg-notify-message alert-error-template" ng-click="$close()" ng-class="$classes">
+    <style>
+        .alert-error-template {
+            cursor: pointer;
+            background-color: red;
+            color:white;
+            border-radius: 14px;
+            margin-left: 50%;            
+            -webkit-transform: translate(-50%,0);
+            -moz-transform: translate(-50%,0);
+            -o-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+            -webkit-transition: top 0.5s ease-out,opacity 0.5s ease-out;
+            -moz-transition: top 0.5s ease-out,opacity 0.5s ease-out;
+            -o-transition: top 0.5s ease-out,opacity 0.5s ease-out;
+            transition: top 0.5s ease-out,opacity 0.5s ease-out;
+            visibility: hidden;
+        }
+    </style>
+    <span ng-show="!$messageTemplate">{{$message}}</span>
+    <span ng-show="$messageTemplate" class="cg-notify-message-template"></span>
+</div>

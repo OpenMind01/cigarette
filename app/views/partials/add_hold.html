@@ -1,0 +1,48 @@
+<div class="popWindow">
+  <div class="popUp_header bg_blue relative">
+    <h3 class="pop_title">Add Hold Event</h3>
+  </div>
+  <form name="" ng-init="holdEvent={}">
+    <div class="padding15">
+      <div class="">
+        <input type="text" placeholder="Title" ng-model="holdEvent.title" class="fill_form" required/>
+      </div>
+      <div class="">
+        <ui-select ng-model="holdEvent.rental"
+                   theme="select2"
+                   search-enabled="true"
+                   ng-disabled="false"
+                   reset-search-input="false"
+                   required
+                   style="width: 300px;">
+          <ui-select-match placeholder="Rental">{{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="rental in rentals | filter: $select.search track by $index">
+            <div ng-bind-html="rental.name"></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="">
+        <input type="text" class="fill_form"
+               ng-model="holdEvent.fromDate"
+               pikaday="fromDatePikaday"
+               ng-change="setNewMinDate(untilDatePikaday, holdEvent.fromDate)"
+               data-icon-left="fa fa-chevron-left"
+               data-icon-right="fa fa-chevron-right"
+               placeholder="From">
+      </div>
+      <div class="">
+        <input type="text" class="fill_form"
+               ng-model="holdEvent.untilDate"
+               pikaday="untilDatePikaday"
+               ng-change="setNewMaxDate(fromDatePikaday, holdEvent.untilDate)"
+               data-icon-left="fa fa-chevron-left"
+               data-icon-right="fa fa-chevron-right"
+               placeholder="Until">
+      </div>
+      <button type="" name="" class="prm_btn bg_grey floatRight btn_small inform_sp" id="" ng-click="closeModal()">cancel</button>
+      <button type="" name="" class="prm_btn bg_blue floatRight btn_small" id="" ng-click="saveHoldEvent(holdEvent)">add</button>
+      <div class="clearFloat"></div>
+    </div>
+  </form>
+
+</div>

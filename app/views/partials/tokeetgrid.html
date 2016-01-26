@@ -1,0 +1,68 @@
+<div class="tokeet-grid-wrapper">
+    <div class="col-md-12">
+        <table class="tokeet_table">
+            <thead>
+                <tr role="row" class="table_header bg_blue align_l">                                                
+                    <th class="text-{{col.textAlign}} {{col.class}}" ng-repeat="col in options.columns">
+                        {{col.display}}                            
+                    </th>
+                </tr>                    
+            </thead>
+            <!-------------common grid----------------->
+            <tbody ng-if="!options.isServersidePagenation">
+                <tr emp-grid-row grid-options="options" row="row" ng-repeat="row in options.data|gridFilter:options">
+                </tr>
+                <tr grid-options="options" row="row" ng-if="!options.data.length && !options.loading">
+                    <td colspan="{{options.columns.length + 1}}" class="align_c">No Data Available</td>
+                </tr>
+                <tr grid-options="options" row="row" ng-if="options.loading">
+                    <td colspan="{{options.columns.length + 1}}" class="align_c">
+                        <div class="loaing">
+                            <i class="fa fa-spinner fa-spin"></i>&nbsp;&nbsp;&nbsp;Loading...&nbsp;&nbsp;&nbsp;<i class="fa fa-spinner fa-spin"></i>
+                        </div>                        
+                    </td>
+                </tr>
+            </tbody>
+            <tbody ng-if="options.isServersidePagenation">
+                <!-------------Server side Pagenation----------------->
+                <tr emp-grid-row
+                    grid-options="options"
+                    row="row"
+                    ng-repeat="row in options.data"
+                    >
+                </tr>                    
+                <tr grid-options="options" row="row" ng-if="!options.data.length && !options.loading">
+                    <td colspan="{{options.columns.length + 1}}" class="align_c">No Data Found</td>
+                </tr>
+                <tr grid-options="options" row="row" ng-if="!options.data.length && options.loading">
+                    <td colspan="{{options.columns.length + 1}}" class="align_c">No Data Found</td>
+                </tr>
+            </tbody>
+        </table>        
+    </div>
+    <div class="emp-grid-pagination-wrapper" ng-if="options.isPagination && options.data.length>10">
+        <div class="col-4half">
+            <div class="page-rows-count">
+                <label class="floatLeft" style="margin-top:-4px;">Results per page:</label>
+                <select ng-model="options.limit" class="prm_select param_select min_min_select floatLeft" style="height:34px;">
+                    <option value="5">5</option>			
+                    <option value="10">10</option>			
+                    <option value="20">20</option>
+                    <option value="50">50</option>			
+                    <option value="100">100</option>			
+                </select>
+            </div>
+        </div>
+        <div class="col-7half floatRight">
+            <div 
+                class="pagnation-control"
+                paging
+                page="options.currentPage"
+                page-size="options.limit" 
+                total="options.data.length">
+            </div> 
+        </div>
+        <div class="clearFloat"></div>
+    </div>
+</div>
+

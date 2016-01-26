@@ -1,0 +1,59 @@
+
+<aside class="col-2half floatLeft">
+    <div class="spacer_r">
+        <h2 class="sec_title">Billing Tags</h2>
+        <div class="tab_container ">
+            <ul class="fix_ul list_aside">
+                <li><a href="#" title="">Paid Invoices</a></li>
+                <li><a href="#" title="">Unpaid Invoices</a></li>
+                <li><a href="#" title="">Cancelled Invoices</a></li>
+            </ul>
+        </div>
+
+        <button type="button" class="prm_btn btn_big bg_blue mtb_20"><a href="create_invoice.php">Create Invoice</a></button>
+
+    </div>
+</aside>
+
+<div class="col-9half floatLeft" >
+    <div class="prm_search col-5 floatRight">			
+        <button class="search_btn bg_grey">Search</button>
+        <input type="search" class="search_inpt" name="search_invoices"  id="search_invoices" placeholder="Search Invoices" />
+    </div>
+
+    <div class="clearFloat"></div>
+    <div class="tabcontents tab_container">
+
+        <table class="tokeet_table">
+            <tr class="table_header bg_blue align_l">
+                <th class="table_sp"></th>
+                <th >Invoice ID</th>
+                <th class="align_c ">Date</th>
+                <th >Guest</th> 
+                <th >Rental</th>
+                <th >Booking</th>
+                <th class="align_c">Status</th>
+                <th >Amount</th>
+                <th class="align_c">Edit</th>
+                <th class="table_sp"></th>
+            <tr>
+
+                <?php for($i=0; $i<6; $i++){?>
+            <tr class="align_l">
+                <td class="table_sp"></td>
+                <td ><a href="invoice.php" title="" class="f_blue">000112112</a></td>
+                <td class="align_c ">20-Feb-2015</td>
+                <td class="popBox" data-ajax="edit_guest.php"><span class="f_blue">John Does</td>
+                <td >Villa Fire</td>
+                <td ><a href="booking_details.php" title="" class="f_blue">00115475</a></td>
+                <td class="align_c">Paid</td>
+                <td >$ 3.200</td>
+                <td class="align_c"><i class="fa fa-ellipsis-v in_tab_ico"></i></td>
+                <td class="table_sp"></td>
+            </tr>
+            <?php } ?>
+
+        </table>			
+    </div>
+</div>
+<div class="clearFloat"></div>

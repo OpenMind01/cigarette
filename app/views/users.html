@@ -1,0 +1,60 @@
+
+
+<aside class="col-2half floatLeft">
+		<div class="spacer_r">
+            <h2 class="sec_title">User & Group Settings</h2>
+			<div class="tab_container ">
+				<ul class="fix_ul list_aside">
+					<li><a href="#" title="">Administrators</a></li>
+					<li><a href="#" title="">Property Managers</a></li>
+					<li><a href="#" title="">House Stuff</a></li>
+					<li><a href="#" title="">Billing & Payments</a></li>
+				</ul>
+			</div>			
+			<button type="button" pop-box="{templateUrl: 'views/partials/add_user.html',controller: 'UserCtrl'}" class="prm_btn btn_big bg_blue mtb_20" data-ajax="add_user.php">Create User</button>			
+		</div>
+	</aside>
+	
+	<div class="col-9half floatLeft" >
+		<nav class="floatLeft col-7">
+			<ul class="tabs tab_width" style="width:720px"> 
+				<li class="tab_item" id="selected_tab">All</li>
+				<li class="tab_item min_tab">A - E</li>
+				<li class="tab_item min_tab">F - J</li>
+				<li class="tab_item min_tab">K - O</li>
+				<li class="tab_item min_tab">P - T</li>
+				<li class="tab_item min_tab">U - Z</li>
+				<div class="clearFloat"></div>
+			</ul>
+		</nav>
+		<div class="prm_search col-5 floatRight">			
+			<button class="search_btn bg_grey">Search</button>
+			<input type="search" name="search_user" class="search_inpt min_select" id="search_user" placeholder="Search Stuff" />
+		</div>
+		
+		<div class="clearFloat"></div>
+		<div class="tabcontents tab_container">
+		
+			<table class="tokeet_table">
+				<tr class="table_header bg_blue align_l">
+					<th class="table_sp"></th>
+					<th >Name</th>
+					<th >Role</th>
+					<th >Email</th> 
+					<th >Telephone</th>
+					<th >Country</th>				
+					<th class="table_sp"></th>
+				<tr>
+				<tr class="align_l" ng-repeat="user in users" pop-box="{templateUrl: 'views/partials/edit_user.html',controller: 'UserCtrl'}">
+					<td class="table_sp"></td>
+					<td class="clickable">{{ user.firstname+' '+user.lastname | capitalize:1}}</td>
+					<td class="clickable">{{ user.usertype }}</td>
+					<td class="clickable">{{ user.primaryemail }}</td>
+					<td class="clickable">{{ user.phone ? user.phone : '....' }}</td>
+					<td class="clickable">{{ user.address.country ? user.address.country : '....' }}</td>
+					<td class="table_sp"></td>
+				</tr>
+            </table>			
+		</div>
+	</div>
+	<div class="clearFloat"></div>

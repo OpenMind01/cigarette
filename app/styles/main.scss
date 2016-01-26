@@ -1,0 +1,20 @@
+$main-color: #00BCD3;
+$bright-text: rgba(255, 255, 255, 1.0);
+// bower:scss
+@import "ng-mfb/mfb/src/mfb.scss";
+// endbower
+
+@import "bootstrapXP.scss";
+@import "select2.scss";
+@import "colors.scss";
+@import "tabs.scss";
+@import "tables.scss";
+@import "popover.scss";
+@import "tokeet.scss";
+@import "custom.scss";
+
+
+.main-contianer{
+    width:100%;
+    height: 100%;
+}

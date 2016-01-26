@@ -1,0 +1,327 @@
+
+button[disabled=disabled], button:disabled,.disabled{
+    cursor: default;
+    pointer-events: none;
+    color: #c0c0c0;
+    opacity: 0.5;
+}
+span.has-error{
+    display: block;
+    color:red;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.horizenal_form span.has-error{
+    margin-left: 97px;
+}
+.tab_item.active{
+    background: #00bcd3;
+    margin: 0 2px 0 0;
+    padding-bottom: 12px;
+}
+.search_inpt {
+    width: 195px;
+}
+
+/**
+ * Tokeet Grid
+ */
+.tokeet-grid-wrapper{
+    .tokeet_table{
+        .loaing{
+            border-radius: 1000px;
+            border-style: solid;
+            border-width: 1px;
+            display: block;
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+            position: relative;
+            padding: .875rem 1.5rem .875rem .875rem;
+            font-size: 13px; //.8125rem;
+            background-color: #008cba;
+            border-color: #0078a0;
+            color: #fff;
+            width: 83%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .emp-grid-pagination-wrapper{
+        padding-top:10px;
+        padding-bottom:10px;
+        .page-rows-count{
+            label{
+                color: #7C7C7C;
+                line-height: 40px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        .pagnation-control{
+            text-align: left;
+            padding-right: 15px;
+            .pagination{
+                margin-top: 0px;
+                margin-bottom: 0px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.prm_search{
+    position: relative;
+    .serch_clear{
+        position: absolute;
+        right: 90px;
+        top: 8px;
+        color: rgb(19, 19, 19);
+    }
+}
+
+
+
+/**
+ *
+ */
+.f_item .dropdown{
+    width: 272px !important;
+    display: inline-block;
+}
+.f_item .full_select {
+    width: 272px !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ui-select-container.select2.select2-container{
+    width: 274px !important;
+    margin-bottom: 10px;
+    a.select2-choice.ui-select-match{
+        height: 30px;
+        line-height: 30px;
+    }
+
+}
+
+
+
+
+/**
+ *Pagenation
+ */
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px
+}
+.pagination>li {
+    display: inline
+}
+.pagination>li>a,
+.pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #7C7C7C;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px
+}
+.pagination>li:first-child>a,
+.pagination>li:first-child>span {
+    margin-left: 0;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px
+}
+.pagination>li:last-child>a,
+.pagination>li:last-child>span {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px
+}
+.pagination>li>a:hover,
+.pagination>li>span:hover,
+.pagination>li>a:focus,
+.pagination>li>span:focus {
+    color: #00BCD3;
+    background-color: #eee;
+    border-color: #ddd
+}
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: #00BCD3;
+    border-color: #00BCD3;
+    cursor: default
+}
+.pagination>.disabled>span,
+.pagination>.disabled>span:hover,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>a,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>a:focus {
+    color: #999;
+    background-color: #fff;
+    border-color: #ddd;
+    cursor: not-allowed
+}
+.pagination-lg>li>a,
+.pagination-lg>li>span {
+    padding: 10px 16px;
+    font-size: 18px
+}
+.pagination-lg>li:first-child>a,
+.pagination-lg>li:first-child>span {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px
+}
+.pagination-lg>li:last-child>a,
+.pagination-lg>li:last-child>span {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px
+}
+.pagination-sm>li>a,
+.pagination-sm>li>span {
+    padding: 5px 10px;
+    font-size: 12px
+}
+.pagination-sm>li:first-child>a,
+.pagination-sm>li:first-child>span {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px
+}
+.pagination-sm>li:last-child>a,
+.pagination-sm>li:last-child>span {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px
+}
+.pager {
+    padding-left: 0;
+    margin: 20px 0;
+    list-style: none;
+    text-align: center
+}
+.pager li {
+    display: inline
+}
+.pager li>a,
+.pager li>span {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px
+}
+.pager li>a:hover,
+.pager li>a:focus {
+    text-decoration: none;
+    background-color: #eee
+}
+.pager .next>a,
+.pager .next>span {
+    float: right
+}
+.pager .previous>a,
+.pager .previous>span {
+    float: left
+}
+.pager .disabled>a,
+.pager .disabled>a:hover,
+.pager .disabled>a:focus,
+.pager .disabled>span {
+    color: #999;
+    background-color: #fff;
+    cursor: not-allowed
+}
+
+/**
+ * Calendar
+ */
+.calendarPopover {
+    .ui-select-container.select2.select2-container {
+        width: 200px !important;
+    }
+}
+
+/** NG Color Picker **/
+ng-color-picker {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 240px;
+    height: 30px;
+}
+
+ng-color-picker ul {
+    padding:0;
+    height:30px;
+    border:none;
+}
+
+ng-color-picker li {
+    height:30px;
+}
+
+/**
+* Help Buttons & Aside
+**/
+@media (max-height: 800px)
+{
+    .mfb-component--br{ margin-bottom: 25px; }
+}
+@media (min-height: 800px)
+{
+    .mfb-component--br{ margin-bottom: 200px; }
+}
+
+.aside-header{
+    background-color: #00BCD3;
+}
+
+.aside-title{
+    color: white;
+}
+
+.aside-body{
+    color: #7C7C7C;
+}
+
+/**
+ * Select 2
+ */
+
+.select2-container .select2-choice {
+  border: 1px solid #E2E2E2;
+  color: #7c7c7c;
+  border-radius: 0;
+  padding: 5px 15px;
+}
+.select2-container .select2-choice .select2-arrow {
+  border-left: 1px solid #E2E2E2;
+  border-radius: 0;
+  background: #E2E2E2;
+}
+.select2-dropdown-open .select2-choice .select2-arrow {
+  background: transparent;
+  border-left: none;
+}
+
+.select2-container .select2-choice .select2-arrow b {
+  border-color: #999 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  background: none;
+}

@@ -1,0 +1,171 @@
+    <aside class="col-2half floatLeft">
+		<div class="spacer_r">
+			<h2 class="sec_title">Available Rentals</h2>
+			<div class="tab_container ">
+				<ul class="fix_ul list_aside relative">
+					<li ng-repeat="rental in rentals | orderBy:'name' track by rental.pkey">
+                        <a ng-click="prepareSave({{rental}})" title="Edit Rental">{{ rental.name | capitalize:1}}
+                            <i class="fa fa-pencil edit_btn_ico floatRight" ng-click="prepareSave({{rental}})"></i>
+                            <div class="clearFloat"></div>
+                        </a>
+                    </li>
+				</ul>
+			</div>
+			
+			<button type="button" class="prm_btn btn_big bg_blue mtb_20 popBox" ng-click="prepareCreate()">Add New Rental</button>
+			
+		</div>
+	</aside>
+	
+	<div class="col-9half floatLeft f_l_grey">
+		<div class="table_title_group">
+			<h2 class="sec_title floatLeft">{{action_heading}}</h2>
+			<p class="floatRight popBox" ng-hide="v_delete" ng-click="deleteRental()">
+                <span class="f_pink">Delete Rental</span><i class="fa fa-trash add_rnd_btn bg_pink f_white"></i>
+            </p>
+
+			<div class="clearFloat"></div>			
+		</div>
+		<div class="">
+			
+			<form name="">
+				<div class="col-6 floatLeft ">
+					<div class="spacer_r ">
+					<div class="padding30 tab_container e_rental_h">
+                        <input type="hidden" name="v_pkey" value="0" ng-model="v_new">
+						<div class="f_item">
+							<label for="v_name" class="">Rental name:</label>
+							<input type="text" ng-model="v_name" name="v_name" id="v_name" placeholder="Rental name" class="fill_form " value="">
+							<div class="clearFloat"></div>
+						</div>
+						<div class="f_item">
+							<label for="v_phone" class="">Phone:</label>
+							<input type="text" ng-model="v_phone" name="v_phone" id="v_phone" placeholder="Phone" class="fill_form " value="">
+							<div class="clearFloat"></div>
+						</div>
+						<div class="f_item">
+							<label for="v_email" class="">Email:</label>
+							<input type="text" ng-model="v_email" name="v_email" id="v_email" placeholder="Email" class="fill_form " value="">
+							<div class="clearFloat"></div>
+						</div>
+						
+						<div class="f_item">
+							<label for="v_color" class="">Color:</label>
+							<ng-color-picker class="" style="" selected='v_color' colors="colors" ng-model="v_color" name="v_color" id="v_color"></ng-color-picker>
+							<div class="clearFloat"></div>
+						</div>
+						
+						<h3 class="sec_sub_title in_form_title f_green" style="margin-bottom:25px;margin-top:25px">Property Location</h3>
+						
+						<div class="f_item">
+							<label for="v_address" class="">Address:</label>
+							<input type="text" ng-model="v_address" name="v_address" id="v_address" placeholder="Address" class="fill_form " value="">
+							<div class="clearFloat"></div>
+						</div>
+                        
+						<div class="f_item">
+							<label for="v_city" class="">City:</label>
+							<input type="text" ng-model="v_city" name="v_city" id="v_city" placeholder="City" class="fill_form " value="">
+							<div class="clearFloat"></div>
+						</div>
+						
+						<div class="f_item dropdown">
+							<label for="v_state" class="">State:</label>
+							<select class="prm_select  full_select" ng-model="v_state" name="v_state" placeholder="Email" id="v_state" value="" >
+								<option value="Florida">Florida</option>
+								<option value="California">California</option>
+								<option value="New York">New York</option>
+							</select>
+							<div class="clearFloat"></div>
+						</div>
+						
+						<div class="f_item">
+							<label for="v_country" class="">Country:</label>
+							<input type="text" ng-model="v_country" name="v_country" id="v_country" placeholder="Country" class="fill_form " value="">
+							<div class="clearFloat"></div>
+						</div>
+						
+					</div>
+					</div>
+				</div>
+				
+				<div class="col-6 floatLeft tab_container ">	
+					<div class="padding30 e_rental_h">
+                        <h3 class="sec_sub_title  f_green" style="margin-bottom:25px">Property Details</h3>
+                        <div class="clearFloat"></div>
+						<div class="col-6 floatLeft">	
+                            
+							<div class="f_item dropdown">
+								<label for="v_bedrooms" class="">Bedrooms:</label>
+								<select class="prm_select param_select min_select min_min_select" ng-model="v_bedrooms" name="v_bedrooms" id="v_bedrooms" value=""
+                                        ng-options="v_bedrooms.label for v_bedrooms in quants track by v_bedrooms.index">
+							   </select>
+
+								<div class="clearFloat"></div>
+							</div>
+							<div class="f_item dropdown">
+								<label for="" class="">Bathrooms:</label>
+								<select class="prm_select param_select min_min_select" ng-model="v_bathrooms" name="v_bathrooms" id="v_bathrooms" value="v_bathrooms" 
+                                        ng-options="v_bathrooms.label for v_bathrooms in quants track by v_bathrooms.index">
+								</select>
+								<div class="clearFloat"></div>
+							</div>
+                            <div class="f_item dropdown">
+								<label for="v_type" class="">Type:</label>
+								<select class="prm_select param_select min_select min_min_select" ng-model="v_type" name="v_type" id="v_type" value="">
+                                    <option>Villa</option>
+                                    <option>House</option>
+                                    <option>Apartment</option>
+                                    <option>Studio</option>
+                                    <option>Private Room</option>
+                                    <option>Cottage</option>
+                                    <option>Castle</option>
+                                    <option>Boat</option>
+                                    <option>Farmhouse</option>
+                                    <option>Other</option>
+							   </select>
+								<div class="clearFloat"></div>
+							</div>
+						</div>
+						
+						<div class="col-6 floatLeft">	
+					
+							<div class="f_item dropdown">
+								<label for="" class="">Sleeps Max:</label>
+								<select class="prm_select param_select min_min_select" ng-model="v_sleep_max" name="v_sleep_max" id="v_sleep_max" value="" 
+                                        ng-options="v_sleep_max.label for v_sleep_max in quants track by v_sleep_max.index">
+								</select>
+								<div class="clearFloat"></div>
+							</div>
+							<div class="f_item dropdown">
+								<label for="" class="">Sleeps Min:</label>
+								<select class="prm_select param_select min_min_select" ng-model="v_sleep_min" name="v_sleep_min" id="v_sleep_min" value="" 
+                                        ng-options="v_sleep_min.label for v_sleep_min in quants track by v_sleep_min.index">
+								</select>
+								<div class="clearFloat"></div>
+							</div>
+                            <div class="f_item dropdown">
+								<label for="v_size" class="">Size:</label>
+                                <input type="text" ng-model="v_size" name="v_size" id="v_size" placeholder="SQFT" class="fill_form" style="width:60px" value="">
+								<div class="clearFloat"></div>
+							</div>
+						</div>
+  
+						<div class="clearFloat"></div>
+						
+						<label for="v_desc" class="">Description:</label>
+						<textarea rows="10" ng-model="v_desc" cols="50" class="fill_form" placeholder="Description..." name="v_desc" id="v_desc" >Enter a description of the rental property.</textarea>
+					</div>
+					
+					
+				</div>
+				<div class="clearFloat"></div>
+			</form>
+			
+		</div>
+		<div class="btn_area">
+			<button type="" name="" class="prm_btn bg_grey floatRight btn_small" id="" ng-click="prepareCreate()">cancel</button>
+			<button type="" name="" class="prm_btn bg_green floatRight btn_small" id="" ng-click="saveRental()">save</button>
+			<div class="clearFloat"></div>
+		</div>
+	</div>

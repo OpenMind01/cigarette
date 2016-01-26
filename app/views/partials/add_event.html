@@ -1,0 +1,78 @@
+<div class="popWindow">
+	<div class="popUp_header bg_blue relative">
+		<h3 class="pop_title">Add Booking or Event</h3>
+	</div>
+	<form name="">
+		<div class="padding15">
+      <div class="">
+        <ui-select ng-model="guest"
+                   theme="select2"
+                   on-select="bookingGuestChange(guest, {fromDatePikaday:fromDatePikaday, untilDatePikaday:untilDatePikaday})"
+                   search-enabled="true"
+                   ng-disabled="false"
+                   reset-search-input="false"
+                   required
+                   style="width: 300px;">
+          <ui-select-match placeholder="Guest">{{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="guest in guests | filter: $select.search track by $index"
+                             refresh="searchGuests($select.search)"
+                             refresh-delay="1000">
+            <div ng-bind-html="guest.name"></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="">
+        <ui-select ng-model="inquiry"
+                   theme="select2"
+                   search-enabled="true"
+                   ng-disabled="false"
+                   on-select="bookingInquiryChange(inquiry, {fromDatePikaday:fromDatePikaday, untilDatePikaday:untilDatePikaday})"
+                   reset-search-input="false"
+                   required
+                   style="width: 300px;">
+          <ui-select-match placeholder="Inquiry">{{$select.selected.inquiry_source +' '+ $select.selected.received_on}}</ui-select-match>
+          <ui-select-choices repeat="inquiry in inquiries | filter: $select.search track by $index">
+            <div ng-bind-html="inquiry.inquiry_source + ' ' + inquiry.received_on"></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="">
+        <ui-select ng-model="rental"
+                   theme="select2"
+                   search-enabled="true"
+                   ng-disabled="false"
+                   on-select = "bookingRentalChange(rental)"
+                   reset-search-input="false"
+                   required
+                   style="width: 300px;">
+          <ui-select-match placeholder="Rental">{{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="rental in rentals | filter: $select.search track by $index">
+            <div ng-bind-html="rental.name"></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="">
+        <input type="text" class="fill_form"
+               ng-model="fromDate"
+               pikaday="fromDatePikaday"
+               ng-change="setNewMinDate(untilDatePikaday, fromDate)"
+               data-icon-left="fa fa-chevron-left"
+               data-icon-right="fa fa-chevron-right"
+               placeholder="From">
+      </div>
+      <div class="">
+        <input type="text" class="fill_form"
+               ng-model="untilDate"
+               pikaday="untilDatePikaday"
+               ng-change="setNewMaxDate(fromDatePikaday, untilDate)"
+               data-icon-left="fa fa-chevron-left"
+               data-icon-right="fa fa-chevron-right"
+               placeholder="Until">
+      </div>
+			<button type="" name="" class="prm_btn bg_grey floatRight btn_small inform_sp" id="" ng-click="closeModal()">cancel</button>
+			<button type="" name="" class="prm_btn bg_blue floatRight btn_small" id="" ng-click="saveEvent({guest: guest, inquiry: inquiry, rental: rental, fromDate: fromDate, untilDate: untilDate})">add</button>
+			<div class="clearFloat"></div>
+		</div>
+	</form>
+
+</div>

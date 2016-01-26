@@ -1,0 +1,15 @@
+<div>
+    <nav mfb-menu position="br" 
+         effect="slidein-spring" 
+         active-icon="ion-arrow-shrink" 
+         resting-icon="ion-arrow-expand"
+         toggling-method="click"
+         menu-state="helpMenuState"
+         style=""
+         ng-click="setHelpTopic()">
+        <button class="helpButton" mfb-button icon="ion-medkit" label="Help Center" ng-click="goToHC()"></button>
+        <button class="helpButton" mfb-button icon="ion-help-buoy" label="Help With {{helpTopic}}" ng-click="showHelp()"></button>
+        <button class="helpButton" mfb-button icon="ion-chatboxes" label="Live Chat" onclick="$zopim.livechat.window.show();" ng-click="closeHelpMenu()"></button>
+        <button class="helpButton" mfb-button icon="ion-speakerphone" label="Give Feedback" ng-click="feedback()"></button>
+    </nav>
+</div>

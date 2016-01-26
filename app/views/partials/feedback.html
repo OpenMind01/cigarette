@@ -1,0 +1,19 @@
+<div class="popWindow">
+    <div class="popUp_header bg_blue relative">
+        <h3 class="pop_title">Give Us Your Feedback</h3><a href="#" ng-click="closeModal()"><i class="fa fa-times close_pop"></i></a>
+    </div>
+    <form validate-form name="add_guest_form" class="horizenal_form">
+        <div class="padding15">
+            <div class="f_item">
+                <textarea rows="5" cols="50" class="fill_form " ng-model="notes" placeholder="Tell us what you think, we'll love to hear from you." name="notes" id="g_notes" ></textarea>
+                <div class="clearFloat"></div>
+            </div>
+            <button type="" name="" class="prm_btn bg_grey floatRight btn_small inform_sp" id="" ng-click="closeModal()">cancel</button>
+            <button type="" name="" class="prm_btn bg_blue floatRight btn_small" id="" ng-click="sendFeedback()" ng-class="{'disabled':feedback_form.$invalid||process}">
+                <span ng-show="process"><i class="fa fa-spinner fa-spin"></i></span>
+                Send
+            </button>
+            <div class="clearFloat"></div>	
+        </div>	 		
+    </form>
+</div>

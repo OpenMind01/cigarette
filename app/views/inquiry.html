@@ -1,0 +1,135 @@
+<aside class="col-2half floatLeft">
+    <div class="spacer_r">
+        <h2 class="sec_title min_letter_sp">Adjacent Inquiries</h2>
+        <div class="tab_container ">
+            <ul class="fix_ul list_aside">
+                <li><a href="#" title="">Jul-25-2015</a></li>
+                <li><a href="#" title="">Jul-25-2015</a></li>
+                <li><a href="#" title="">Jul-25-2015</a></li>
+            </ul>
+        </div>
+        <button title="" class="prm_btn btn_big bg_light_grey mtb_20"><i class="fa fa-angle-double-left"></i>&nbsp;Back to Inquiries</button>
+        <button type="button" ng-click="bookInquery()" class="prm_btn btn_big bg_blue mtb_20 create_inquiry_popup">BOOK INQUIRY</button>
+    </div>
+</aside>
+<div class="col-9half floatLeft">
+    <h2 class="sec_title">Inquiry Details</h2>
+    <div class="clearFloat"></div>
+    <div class="tab_container">
+        <table class="tokeet_table align_l">
+            <tr class="table_header bg_light_grey align_l">
+                <th class="table_sp"></th>
+                <th class="tab_w160">Guest Details</th>
+                <th class="">Booking Detail</th>			
+                <th class="tab_w120 ">Charges</th>
+                <th class="tab_w120 ">Amounts</th>
+                <th class="table_sp"></th>
+            </tr>
+            <tr>
+                <td class="table_sp"></td>
+                <td class="tab_w160 clickable">{{inquiry.guest.name}}</td>
+                <td class="clickable" ng-click="goTo('/rentals')">{{inquiry.rental.name}}</td>				
+                <td class="tab_w120 transp_cell clickable">Rental Charge:</td>
+                <td class="tab_w120 transp_cell clickable">$ 3.000</td>
+                <td class="table_sp transp_cell"></td> 
+            </tr>
+            <tr>
+                <td class="table_sp"></td>
+                <td class="tab_w160 clickable">{{inquiry.guest.phone ? inquiry.guest.phone : 'No Phone Number'}}</td>
+                <td class="">{{inquiry.num_adults + inquiry.num_child}} Guests</td>				
+                <td class="tab_w120 transp_cell clickable">Discounts:</td>
+                <td class="tab_w120 transp_cell clickable">0</td>
+                <td class="table_sp transp_cell"></td>
+            </tr>
+            <tr>
+                <td class="table_sp"></td>
+                <td class="tab_w160 clickable">{{inquiry.guest.primaryemail| abbreviate:false:15:'...'}}</td>
+                <td class="">{{inquiry.guest_arrive| date:'MMMM dd, yyyy'}} &nbsp;&nbsp;-&nbsp;&nbsp; {{inquiry.guest_depart| date:'MMMM dd, yyyy'}}</td>				
+                <td class="tab_w120 transp_cell clickable">Taxes & Fees:</td>
+                <td class="tab_w120 transp_cell no_border_bottom clickable">$ 800</td>
+                <td class="table_sp transp_cell"></td>					
+            </tr>			
+            <tr>
+                <td class="table_sp"></td>
+                <td class="tab_w160 no_border_bottom clickable">Source: {{inquiry.inquiry_source}}</td>
+                <td class="no_border_bottom">{{inquiry.guest_depart| dateDiff:inquiry.guest_arrive}} days, {{(inquiry.guest_depart| dateDiff:inquiry.guest_arrive)-1}} Nights</td>
+                <td class="tab_w120 f_pink transp_cell no_border_bottom">TOTAL:</td>
+                <td colspan="2" class="tab_w120 bg_pink total_val no_border_bottom">$ 3.800</td>				
+            </tr>				
+        </table>
+    </div>
+
+    <div class="mtb_40">
+        <div class="table_title_group">
+            <h2 class="sec_title ">Messages</h2>	
+            <p class="floatRight popBox"><span class="f_blue">New Message</span><i class="fa fa-plus add_rnd_btn bg_blue f_white"></i></p>
+            <div class="clearFloat"></div>
+
+        </div>
+        <div class=" tab_container">
+            <table class="tokeet_table align_l">
+                <tr class="table_header bg_blue align_l">
+                    <th class="table_sp"></th>
+                    <th class="tab_w120">Received&nbsp;<i class="fa fa-caret-down"></i></th>
+                    <th class="tab_w120">Status</th>
+                    <th class="">Message</th>
+                    <th class="table_sp"></th>
+                </tr>
+
+                <tr ng-repeat="message in messages track by message.pkey">
+                    <td class="table_sp"></td>
+                    <td class="tab_w120">{{message.received_on| date:'MMMM dd, hh:mm a'}}</td>
+                    <td class="tab_w120">{{message.read ? 'Read' : 'Unread'}}</td>
+                    <td class="">{{message.message_txt}}</td>
+                    <td class="table_sp"></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="mtb_40">
+        <div class="table_title_group">
+            <h2 class="sec_title ">Billing & Payments</h2>
+            <p class="floatRight"><span class="f_blue">Create Invoice</span><i class="fa fa-plus add_rnd_btn bg_blue f_white"></i></p>
+            <div class="clearFloat"></div>
+        </div>
+        <div class="tab_container">
+            <table class="tokeet_table">
+                <tr class="table_header bg_blue align_l">
+                    <th class="table_sp"></th>
+                    <th class="tab_w120">Invoice ID&nbsp;<i class="fa fa-caret-down"></i></th>
+                    <th class="tab_w90">Sent</th>
+                    <th class="">Status</th>
+                    <th class="">Paid</th>
+                    <th class="">Recipient</th>
+                    <th class="tab_w60">Amount</th>
+
+                <div class="clearFloat"></div>
+                <th class="table_sp"></th>
+                </tr>
+                <?php for($i=0; $i<3; $i++){?>
+                <tr>
+                    <td class="table_sp"></td>
+                    <td class="">0012112</td>
+                    <td class="">30-Jul-2015</td>
+                    <td class="">Pending</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    <td class="tab_w60">$ 999.99</td>
+                    <td class="table_sp"></td>
+                </tr>
+                <?php } ?>
+            </table>
+        </div>
+    </div>
+
+    <div class="clearFloat"></div>
+
+    <div class="btn_area">
+        <button type="" name="" class="prm_btn bg_grey floatRight btn_small" id=""><i class="fa fa-angle-double-left"></i>&nbsp;cancel, back to inquiries</button>
+        <button type="" name="" class="prm_btn bg_green floatRight btn_small" id="">save</button>
+        <div class="clearFloat"></div>
+    </div>
+</div>
+<div class="clearFloat"></div>	

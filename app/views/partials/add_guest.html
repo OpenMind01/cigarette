@@ -1,0 +1,51 @@
+<div class="popWindow">
+    <div class="popUp_header bg_blue relative">
+        <h3 class="pop_title">Add Guest</h3><a href="#" ng-click="closeModal()"><i class="fa fa-times close_pop"></i></a>
+    </div>
+    <form validate-form name="add_guest_form" class="horizenal_form">
+        <div class="padding15">
+            <div class="f_item">
+                <label for="v_name" class="">Guest Name:</label>
+                <input type="text" name="name" ng-model="name" id="v_name" placeholder="Rental name" class="fill_form" required>
+                <span ng-show="add_guest_form.name.$invalid && add_guest_form.name.$dirty" class="help-block has-error">
+                    Please input guest name
+                </span>
+                <div class="clearFloat"></div>
+            </div>
+            <div class="f_item">
+                <label for="v_email" class="">Email:</label>
+                <input type="email" name="email" ng-model="email" id="v_email" placeholder="Email" class="fill_form" required>
+                <span ng-show="add_guest_form.email.$invalid && add_guest_form.email.$dirty" class="help-block has-error">
+                    Please input valid email address
+                </span>
+                <div class="clearFloat"></div>
+            </div>
+            <div class="f_item">
+                <label for="v_phone" class="">Phone:</label>
+                <input type="text" name="phone" ng-model="phone" id="v_phone" placeholder="Phone" class="fill_form">
+                <div class="clearFloat"></div>
+            </div>
+            <div class="f_item">
+                <label for="g_city" class="">Country:</label>
+                <input type="text" name="country" ng-model="country" id="g_country" class="fill_form "/>
+                <div class="clearFloat"></div>
+            </div>
+            <div class="f_item">
+                <label for="g_address" class="">Address:</label>				
+                <input type="text" name="address" ng-model="address" id="g_address" class="fill_form">
+                <div class="clearFloat"></div>
+            </div>
+            <div class="f_item">
+                <label for="g_notes" class="">Guest Notes:</label>
+                <textarea rows="5" cols="50" class="fill_form " ng-model="notes" placeholder="Guest Notes" name="notes" id="g_notes" ></textarea>
+                <div class="clearFloat"></div>
+            </div>
+            <button type="" name="" class="prm_btn bg_grey floatRight btn_small inform_sp" id="" ng-click="closeModal()">cancel</button>
+            <button type="" name="" class="prm_btn bg_blue floatRight btn_small" id="" ng-click="createGuest()" ng-class="{'disabled':add_guest_form.$invalid||process}">
+                <span ng-show="process"><i class="fa fa-spinner fa-spin"></i></span>
+                add
+            </button>
+            <div class="clearFloat"></div>	
+        </div>	 		
+    </form>
+</div>

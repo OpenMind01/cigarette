@@ -1,0 +1,59 @@
+<div class="col-12half floatLeft dropdown">
+	<select class="prm_select floatLeft min_select">
+		<option value="">All Rentals</option>
+		<option value="">Villa Cloud</option>
+		<option value="">Villa Water</option>
+	</select>
+	<button type="button" class="prm_btn bg_blue floatRight" data-animation="am-flip-x" bs-dropdown="addEventDropdown" aria-haspopup="true" aria-expanded="false">
+		Add Event <i class="fa fa-caret-down"></i>
+	</button>
+	<nav class="floatRight col-9 align_r">
+		<ul class="tabs ">
+			<li class="tab_item" ng-click="today()">Today</li>
+			<li class="tab_item" ng-click="changeView('agendaDay')">Day</li>
+			<li class="tab_item" ng-click="changeView('agendaWeek')">Week</li>
+			<li class="tab_item" ng-click="changeView('month')">Month</li>
+			<li class="min_tab" ng-click="previous()"><i class="fa fa-angle-left"></i></li>
+			<li class="tab_item calendarMonth" id="selected_tab">{{ calendarMonth }}</li>
+			<li class="min_tab" ng-click="next()"><i class="fa fa-angle-right"></i></li>
+			<li class="tab_item" class="btn btn-default" data-animation="am-flip-x" bs-dropdown="yearPicker" aria-haspopup="true" aria-expanded="false">
+				Year <i class="fa fa-caret-down"></i>
+			</li>
+			<div class="clearFloat"></div>
+		</ul>
+	</nav>
+	<div class="clearFloat"></div>
+
+	<div class="tabcontents tab_container">
+		<table class="tokeet_table calendar_table">
+			<tr class="table_header bg_blue align_l">
+				<th>Sunday</th>
+				<th>Monday</th>
+				<th>Tuesday</th>
+				<th>Wednesday</th>
+				<th>Thursday</th>
+				<th>Friday</th>
+				<th>Saturday</th>
+			<tr>
+			<tr>
+				<td colspan="7" style="padding : 0">
+					<!-- Full Calendar CSS Libraries -->
+					<link rel="stylesheet" href="styles/calendar.css"/>
+					<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+					<link rel="stylesheet" href="http://nohros.com/nsPopover/nsPopover.css">
+
+					<div id="directives-calendar" ng-controller="CalendarCtrl">
+						<div class="row-fluid">
+							<div class="span8">
+								<div class="calendar" ng-model="filteredEvents" calendar="{{myCalendar}}" ui-calendar="uiConfig.calendar">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearFloat"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="clearFloat"></div>

@@ -1,0 +1,63 @@
+<div class="popWindow" >
+	<div class="popUp_header bg_blue relative">
+		<h3 class="pop_title">Edit User Details</h3>
+	</div>
+	<div class="padding30">
+	<form name="">
+				
+		<div class="f_item">
+			<label for="u_fname" class="floatLeft">First Name:</label>
+			<input type="text" name="u_fname" id="u_fname" placeholder="First Name" class="fill_form floatLeft" value="{{ user.firstname }}">
+			<div class="clearFloat"></div>
+		</div>
+
+        <div class="f_item">
+			<label for="u_lname" class="floatLeft">Last Name:</label>
+			<input type="text" name="u_lname" id="u_lname" placeholder="Last Name" class="fill_form floatLeft" value="{{ user.lastname }}">
+			<div class="clearFloat"></div>
+		</div>
+        
+		<div class="f_item">
+			<label for="u_email" class="floatLeft">Email:</label>
+			<input type="text" name="u_email" id="u_email" placeholder="Email" class="fill_form floatLeft" value="{{ user.email }}">
+			<div class="clearFloat"></div>
+		</div>
+		
+		<div class="f_item">
+			<label for="u_phone" class="floatLeft">Phone:</label>
+			<input type="text" name="u_phone" id="u_phone" placeholder="Phone" class="fill_form floatLeft" value="{{ user.phone }}">
+			<div class="clearFloat"></div>
+		</div>
+        
+        <div class="f_item">
+			<label for="u_country" class="floatLeft">Country:</label>
+			<input type="text" name="u_country" id="u_country" placeholder="Country" class="fill_form floatLeft" value="{{ user.address.country }}">
+			<div class="clearFloat"></div>
+		</div>
+			
+		<div class="f_item ">
+			<label for="u_pos" class="floatLeft">User Group:</label>
+			<div class="floatLeft radio_select">
+				<p><input type="radio" name="u_pos"  value="Administrator">
+				<span>Administrator</span></p>
+				<p><input type="radio" name="u_pos"  value="Manager">
+				<span>Manager</span></p>	
+				<p><input type="radio" name="u_pos"  value="House Stuff">
+				<span>House Stuff</span></p>
+			</div>
+			<div class="clearFloat"></div>
+		</div>	
+
+		<div class="f_item">
+			<p class="floatRight f_blue">Reset Password</p>
+			<div class="clearFloat"></div>
+		</div>	 
+	
+		<div class="btn_area">
+			<button type="" name="Cancel" class="prm_btn bg_grey floatRight btn_small" id="Cancel" ng-click="closeModal()">cancel</button>
+                <button type="" name="Add User" class="prm_btn bg_blue floatRight btn_small" id="Add User" ng-click="saveUser()">Save</button>
+			<div class="clearFloat"></div>
+		</div>
+	</form>
+	</div>
+</div>
